@@ -1,0 +1,33 @@
+/* START: searchbar styles */
+.searchbar {
+  @apply flex items-center justify-start xl:max-w-2xl md:w-full sm:w-full max-sm:flex-col  relative max-sm:gap-4;
+}
+
+.searchbar__item {
+  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
+}
+
+.searchbar__input {
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+}
+/* END: searchbar styles */
+/* START: search manufacturer styles */
+.search_manufacturer {
+  @apply flex-1 max-sm:w-full flex justify-start items-center;
+}
+
+.search_manufacturer__input_left {
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer uppercase text-sm;
+}
+.search_manufacturer__input_right {
+  @apply w-full h-[48px] pl-12 p-4 border-l-gray-200 border-l-[1px] rounded-r-full max-sm:rounded-full bg-light-white outline-none cursor-pointer uppercase text-sm;
+}
+
+.search_manufacturer__options {
+  @apply absolute mt-1 w-full overflow-y-auto max-h-[180px] rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.search_manufacturer__option {
+  @apply cursor-default select-none py-2 pl-10 pr-4;
+}
+/* END: search manufacturer styles */

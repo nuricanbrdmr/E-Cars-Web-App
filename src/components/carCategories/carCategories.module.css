@@ -1,0 +1,20 @@
+.home__text_container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+}
+
+.home__filters {
+  @apply mt-12 w-full z-10 flex items-center flex-wrap gap-5 relative;
+}
+
+.home__filter_container {
+  @apply flex justify-start max-w-2xl flex-wrap items-center gap-2;
+}
+
+.home__cars_wrapper {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 z-0;
+}
+
+.home__error_container {
+  @apply mt-16 flex justify-center items-center flex-col gap-2;
+}
+/* END: Home styles */
