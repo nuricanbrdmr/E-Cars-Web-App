@@ -13,8 +13,8 @@ export async function mailAction({ email }) {
     var transport = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'iletisim.ecars@gmail.com', // Gmail adresiniz
-        pass: 'joihnwpjlikstyhr' // Gmail uygulama şifresi
+        user: process.env.MAIL_USER, // Gmail adresiniz
+        pass: process.env.MAIL_PASSWORD // Gmail uygulama şifresi
       }
     });
 
