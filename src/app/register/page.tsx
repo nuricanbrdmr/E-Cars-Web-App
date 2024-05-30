@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { BiShow, BiHide } from "react-icons/bi"; // Show/Hide icons
+import { BiShow, BiHide } from "react-icons/bi";
 import styles from "@/app/api/auth.module.css";
 import Image from "next/image";
 
@@ -25,7 +25,8 @@ const Register = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const { firstname, lastname, email, password, confirmPassword, phone } = e.target.elements;
+    const { firstname, lastname, email, password, confirmPassword, phone } =
+      e.target.elements;
 
     if (!isValidEmail(email.value)) {
       setError("Email is invalid");
@@ -207,7 +208,9 @@ const Register = () => {
                         />
                         <button
                           type="button"
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          onClick={() =>
+                            setShowConfirmPassword(!showConfirmPassword)
+                          }
                           className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600"
                         >
                           {showConfirmPassword ? <BiShow /> : <BiHide />}

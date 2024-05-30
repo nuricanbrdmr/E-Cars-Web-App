@@ -22,8 +22,8 @@ const AlternativeItem = ({ car }) => {
               >
                 <Image
                   src={urlFor(car.images[0]).url()}
-                  width={340}
-                  height={147}
+                  width={290}
+                  height={125}
                   alt=""
                   className="object-contain"
                 />

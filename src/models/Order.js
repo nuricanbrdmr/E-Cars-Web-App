@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema(
   {
-    userId: {
+    userMail: {
       type: String,
       unique: false, // Kullanıcı kimliği benzersiz olmalı
       required: true,

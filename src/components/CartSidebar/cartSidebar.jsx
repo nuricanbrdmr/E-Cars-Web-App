@@ -47,7 +47,7 @@ const CartSidebar = ({
               </h5>
             </div>
           ) : (
-            <ScrollArea className="h-[70vh] xl:h-[74vh] pr-4 mb-4">
+            <ScrollArea className="h-[70vh] xl:h-[72vh] pr-4 mb-4">
               {arrayFromObject.map((item, key) => {
                 return (
                   <CartItem
@@ -65,9 +65,9 @@ const CartSidebar = ({
           )}
         </>
         {cartCountValue > 0 && (
-          <div>
+          <div className="m-0 p-0">
             <div className="flex justify-between font-semibold">
-              <div className="uppercase mb-5">Total</div>
+              <div className="uppercase mb-3">Total</div>
               <div>
                 {totalPriceValue
                   .toFixed(2)

@@ -24,7 +24,7 @@
 }
 
 .search_manufacturer__options {
-  @apply absolute mt-1 w-full overflow-y-auto max-h-[180px] rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+  @apply absolute mt-1 w-full z-20 overflow-y-auto max-h-[180px] rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
 
 .search_manufacturer__option {

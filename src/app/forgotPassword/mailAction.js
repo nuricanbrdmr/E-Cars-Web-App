@@ -7,7 +7,7 @@ import nodemailer from "nodemailer";
 
 export async function mailAction({ email }) {
   await connect();
-  const result = await User.findOne({ email });
+  const result = await User.findOne({ email }); // mail kontrol
   if (result) {
     const token = nanoid(32);
     var transport = nodemailer.createTransport({
@@ -20,7 +20,7 @@ export async function mailAction({ email }) {
 
     const htmlBody = `Click here to <a href="http://localhost:3000/reset-password/${token}">Reset Password</a>`;
     const info = await transport.sendMail({
-      from: '<mutlunureda@gmail.com>', // sender address
+      from: process.env.MAIL_USER, // sender address
       to: email, // list of receivers
       subject: "Click Link To Reset Password", // Subject line
       text: "Click Link To Reset Password", // plain text body

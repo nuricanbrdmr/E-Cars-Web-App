@@ -20,14 +20,14 @@ export const POST = async (request: any) => {
     await saveOrderToDatabase(email, productIds, orderNumber, state);
 
     return new NextResponse(
-      { message: "Order saved successfully" as string },
-      { status: 200 }
+      JSON.stringify({ message: "Order saved successfully" }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
     console.error("Error saving order:", error); // Hata mesajını konsola yazdır
     return new NextResponse(
-      { error: "Failed to save order" as string },
-      { status: 500 }
+      JSON.stringify({ error: "Failed to save order" }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 };

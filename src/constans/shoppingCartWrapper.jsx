@@ -205,7 +205,7 @@ export const ShoppingCartWrapper = ({ children, cars }) => {
           {children}
         </Home>
       ) : pathname.startsWith("/product/") ? (
-        <ProductDetails addItem={addItem}>
+        <ProductDetails setCartCount={cartCount} username={username}>
           {children}
         </ProductDetails>
       ) : (

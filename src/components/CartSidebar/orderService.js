@@ -1,10 +1,10 @@
 import Order from "@/models/Order";
 import connect from "@/utils/db";
 
-const saveOrderToDatabase = async (userId, productIds, orderNumber, state) => {
+const saveOrderToDatabase = async (userMail, productIds, orderNumber, state) => {
   await connect();
   const order = new Order({
-    userId,
+    userMail,
     productId: productIds,
     orderNumber,
     state: state // or any initial state

@@ -17,24 +17,24 @@ const CarAlternatives = ({ cars, carBrand, carModel, chassisType }) => {
     const filtered = cars
       .filter((car) => {
         const categoryMatch = car.categories.some(
-          (cri) => cri.name.toLowerCase() !== carBrand.toLowerCase()
+          (cri) => cri.name.toLowerCase().replace(/\s+/g, '') !== carBrand.toLowerCase().replace(/\s+/g, '')
         );
-        const modelMatch = car.model.toLowerCase() === carModel.toLowerCase();
+        const modelMatch = car.model.toLowerCase().replace(/\s+/g, '') === carModel.toLowerCase().replace(/\s+/g, '');
         return !categoryMatch || !modelMatch; // Marka eşleşmeli ama model eşleşmese de getir.
       })
       .sort((a, b) => {
         const categoryMatchA = a.categories.some(
-          (cri) => cri.name.toLowerCase() === carBrand.toLowerCase()
+          (cri) => cri.name.toLowerCase().replace(/\s+/g, '') === carBrand.toLowerCase().replace(/\s+/g, '')
         );
         const categoryMatchB = b.categories.some(
-          (cri) => cri.name.toLowerCase() === carBrand.toLowerCase()
+          (cri) => cri.name.toLowerCase().replace(/\s+/g, '') === carBrand.toLowerCase().replace(/\s+/g, '')
         );
 
         // Chassis_type eşleşmesine göre sıralama yap
         const chassisMatchA =
-          a.chassis_type.toLowerCase() === chassisType.toLowerCase();
+          a.chassis_type.toLowerCase().replace(/\s+/g, '') === chassisType.toLowerCase().replace(/\s+/g, '');
         const chassisMatchB =
-          b.chassis_type.toLowerCase() === chassisType.toLowerCase();
+          b.chassis_type.toLowerCase().replace(/\s+/g, '') === chassisType.toLowerCase().replace(/\s+/g, '');
 
         if (categoryMatchA !== categoryMatchB) {
           return categoryMatchA ? -1 : 1;

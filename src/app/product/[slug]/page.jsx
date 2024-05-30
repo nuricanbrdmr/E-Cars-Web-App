@@ -22,7 +22,39 @@ import CarTechnicalDetails from "../../../components/CarTechnicalDetails/carTech
 import CarAlternatives from "./../../../components/CarAlternatives/carAlternatives";
 import { usePathname } from "next/navigation";
 
-const ProductDetails = ({addItem}) => {
+const ProductDetails = ({setCartCount, username}) => {
+  const addItem = (carObject, username) => {
+    var storedCartData = localStorage.getItem(username + "_cart");
+  
+    var cartDataObject;
+    if (!storedCartData) {
+      cartDataObject = {
+        cartCount: 0,
+        cartDetails: {},
+        totalPrice: 0,
+      };
+    } else {
+      cartDataObject = JSON.parse(storedCartData);
+    }
+  
+    // carObject'in cartDetails içindeki id'sine göre mevcut bir öğe arayın
+    const existingItem = cartDataObject.cartDetails[carObject.price_id];
+  
+    if (existingItem) {
+      // Eğer aynı id'ye sahip bir öğe varsa, sadece quantity değerini artırın
+      existingItem.quantity++;
+    } else {
+      cartDataObject.cartDetails[carObject.price_id] = {
+        ...carObject,
+        quantity: 1,
+      };
+    }
+    cartDataObject.cartCount++;
+    cartDataObject.totalPrice += parseInt(carObject.price);
+  
+    localStorage.setItem(username + "_cart", JSON.stringify(cartDataObject));
+    setCartCount(username);
+  };
   const pathname = usePathname();
   const slug = pathname.split("/").pop();
 
@@ -31,6 +63,7 @@ const ProductDetails = ({addItem}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchCarData = async () => {
       const carData = await getCarData(slug);
       const allCars = await allData();
@@ -164,7 +197,7 @@ const ProductDetails = ({addItem}) => {
           </div>
 
           {/* Car Slider */}
-          <div className="px-8" data-aos="fade-up">
+          <div className="px-8 mt-8" data-aos="fade-up">
             <h4 className="text-center my-2">{car.title} alternatives</h4>
             <CarAlternatives
               cars={cars}

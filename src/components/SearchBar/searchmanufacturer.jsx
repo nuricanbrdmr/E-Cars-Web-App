@@ -31,14 +31,9 @@ const SearchManufacturer = ({
     let models = ["ALL"];
     carModels.forEach((item) => {
       if (carBrand === "ALL") {
-        if (item.brand && item.model) {
-          models.push(item.model);
-        }
+        models.push(item.model);
       } else if (
-        carBrand &&
-        item.brand &&
-        item.model &&
-        carBrand.toLowerCase() === item.brand.toLowerCase()
+        carBrand.toLowerCase().replace(/\s+/g, '') === item.brand.toLowerCase().replace(/\s+/g, '')
       ) {
         models.push(item.model);
       }
