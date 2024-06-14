@@ -8,7 +8,7 @@ The Project Requirements Document outlines the essential requirements and functi
 ### Project Design Document
 The Project Design Document details the architectural and technical design of the project. It includes diagrams, models, and descriptions that guide the implementation and ensure that all components are well-integrated and aligned with the requirements.
 
-[Download the Project Design Document (PDF)]([link-to-your-pdf](https://github.com/user-attachments/files/15832666/Proje.Tasarim.Dokumani.pdf))
+[Download the Project Design Document (PDF)](https://github.com/user-attachments/files/15832666/Proje.Tasarim.Dokumani.pdf)
 
 ## Getting Started
 
