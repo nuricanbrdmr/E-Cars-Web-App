@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Documents
+
+### Project Requirements Document
+The Project Requirements Document outlines the essential requirements and functionalities that the project aims to fulfill. It serves as a foundation for the project's development and provides a clear understanding of the project's objectives.
+
+[Download the Project Requirements Document (PDF)](https://github.com/user-attachments/files/15832669/Proje.Yazilim.Gereksinim.Dokumani.pdf)
+
+### Project Design Document
+The Project Design Document details the architectural and technical design of the project. It includes diagrams, models, and descriptions that guide the implementation and ensure that all components are well-integrated and aligned with the requirements.
+
+[Download the Project Design Document (PDF)]([link-to-your-pdf](https://github.com/user-attachments/files/15832666/Proje.Tasarim.Dokumani.pdf))
 
 ## Getting Started
 
